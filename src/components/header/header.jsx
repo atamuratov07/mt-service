@@ -3,9 +3,9 @@ import { useAppContext } from '../../context/app-context'
 import { HeaderMain } from './header-main'
 import { HeaderNav } from './header-nav'
 
-function getHeaderMainData(headerData, contactsData) {
+function getHeaderMainData(headerData, contactsData, baseDir) {
 	return {
-		logo: headerData.logo,
+		logo: baseDir + headerData.logo,
 		tels: contactsData.tels,
 		schedule: contactsData.shortSchedule,
 	}
@@ -13,14 +13,18 @@ function getHeaderMainData(headerData, contactsData) {
 
 export function Header() {
 	const [burgerActive, setBurgerActive] = useState(false)
-	const { header: headerData, contacts: contactsData } = useAppContext()
+	const {
+		header: headerData,
+		contacts: contactsData,
+		baseDir,
+	} = useAppContext()
 
 	if (!headerData || !contactsData) return null
 
 	return (
 		<header>
 			<HeaderMain
-				data={getHeaderMainData(headerData, contactsData)}
+				data={getHeaderMainData(headerData, contactsData, baseDir)}
 				isBurgerActive={burgerActive}
 				onBurgerClick={newState => setBurgerActive(newState)}
 			/>

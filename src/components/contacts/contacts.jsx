@@ -93,7 +93,7 @@ function RenderContactsInfo({ data }) {
 }
 
 export function Contacts() {
-	const { contacts: contactsData } = useAppContext()
+	const { contacts: contactsData, baseDir } = useAppContext()
 
 	if (!contactsData) return null
 
@@ -108,7 +108,7 @@ export function Contacts() {
 				</h3>
 				<div className='p-4 md:p-8 border border-gray-400 flex flex-col md:flex-row gap-4 sm:gap-9 overflow-hidden'>
 					<img
-						src={contactsData.address.photo}
+						src={baseDir + contactsData.address.photo}
 						alt='Address Image'
 						className='md:max-w-[40%] object-cover'
 					/>

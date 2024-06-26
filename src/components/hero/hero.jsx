@@ -2,7 +2,7 @@ import { useAppContext } from '../../context/app-context'
 import { Advantages } from '../advantages'
 
 export function Hero() {
-	const { hero: heroData } = useAppContext()
+	const { hero: heroData, baseDir } = useAppContext()
 
 	if (!heroData) return null
 
@@ -14,7 +14,7 @@ export function Hero() {
 			{heroData.backgroundImage && (
 				<img
 					alt='Hero background image'
-					src={heroData.backgroundImage}
+					src={baseDir + heroData.backgroundImage}
 					className='absolute inset-0 opacity-50 block w-full h-full object-cover'
 				/>
 			)}
