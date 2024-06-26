@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react'
+import jsonData from '/data.json?url'
 
 const AppContext = createContext({})
 
@@ -13,7 +14,7 @@ export function AppContextProvider({ children }) {
 
 	useEffect(() => {
 		async function fetchData() {
-			const response = await fetch('/mt-service/assets/data.json')
+			const response = await fetch(jsonData)
 
 			const res = await response.json()
 
