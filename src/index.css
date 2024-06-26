@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.transition-burger-bottom {
+		transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+			transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+	}
+	.transition-burger-bottom-after {
+		transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1),
+			transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+	}
+	.transition-burger-top {
+		transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+			transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+	}
+	.transition-burger-top-after {
+		transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1),
+			transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+	}
+	.box {
+		display: -webkit-box;
+		-webkit-box-orient: horizontal;
+		-webkit-line-clamp: 2;
+	}
+}
+
+@layer utilities {
+	.flex-fixed {
+		flex: 0 0 auto;
+	}
+
+	.bg-accent-gradient {
+		background: linear-gradient(
+			120deg,
+			var(--color-accent) 70%,
+			#136dc2 70% 77%,
+			#075dac 77%
+		);
+	}
+}
+
+@layer base {
+	::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+		background-color: var(--color-active);
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: var(--color-accent);
+	}
+
+	:root {
+		--font-primary: 'Roboto';
+		--font-secondary: 'Roboto Condensed';
+		--color-primary: #000;
+		--color-secondary: #7a8098;
+		--color-secondary-alt: #9fa2ae;
+		--color-ternary: #fff;
+		--color-hover: #43495c;
+		--color-active: #242838;
+		--color-accent: #2375c3;
+		--color-bg-primary: #fff;
+		--color-bg-secondary: #3b3f4f;
+		--color-bg-ternary: #f3f3f3;
+	}
+
+	html {
+		scroll-behavior: smooth;
+		background-color: var(--color-active);
+		/* scrollbar-gutter: stable; */
+	}
+
+	body {
+		@apply text-primary overflow-x-hidden min-h-screen bg-bg;
+	}
+
+	@font-face {
+		font-family: 'Roboto';
+		src: url('/fonts/Roboto-Regular.ttf');
+		font-weight: 400;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Roboto';
+		src: url('/fonts/Roboto-Medium.ttf');
+		font-weight: 500;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Roboto';
+		src: url('/fonts/Roboto-Bold.ttf');
+		font-weight: 700;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Roboto';
+		src: url('/fonts/Roboto-Black.ttf');
+		font-weight: 900;
+		font-display: swap;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/RobotoCondensed-Regular.ttf');
+		font-weight: 400;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/RobotoCondensed-Medium.ttf');
+		font-weight: 500;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/RobotoCondensed-SemiBold.ttf');
+		font-weight: 600;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/RobotoCondensed-Bold.ttf');
+		font-weight: 700;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/RobotoCondensed-ExtraBold.ttf');
+		font-weight: 800;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/RobotoCondensed-Black.ttf');
+		font-weight: 900;
+		font-display: swap;
+		font-style: normal;
+	}
+}
