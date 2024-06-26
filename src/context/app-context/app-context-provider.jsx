@@ -13,7 +13,7 @@ export function AppContextProvider({ children }) {
 
 	useEffect(() => {
 		async function fetchData() {
-			const response = await fetch('/data.json')
+			const response = await fetch('/mt-service/assets/data.json')
 
 			const res = await response.json()
 
