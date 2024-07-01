@@ -9,7 +9,7 @@ export function Brands() {
 	const brandElements = brandsData.map(brandData => {
 		return () => (
 			<img
-				src={brandData.image}
+				src={baseDir + brandData.image}
 				alt={brandData.name}
 				title={brandData.name}
 				className='block w-full h-8 md:h-10 grayscale hover:grayscale-0 active:grayscale-0 transition-[filter]'
