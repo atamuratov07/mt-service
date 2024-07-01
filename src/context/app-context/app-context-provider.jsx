@@ -18,8 +18,7 @@ export function AppContextProvider({ children }) {
 
 			const res = await response.json()
 
-			if (res !== undefined)
-				setData({ ...res, baseDir: import.meta.env.BASE_URL })
+			if (res !== undefined) setData(res)
 		}
 
 		fetchData()

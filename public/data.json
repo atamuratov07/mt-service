@@ -1,4 +1,5 @@
 {
+	"baseDir": "",
 	"icons": {
 		"path": "/icons/sprite.svg",
 		"starterId": "icons-sprite-"
@@ -35,7 +36,6 @@
 	},
 	"hero": {
 		"title": "Ремонт и обслуживание бытовой техники в Ташкенте",
-		"subTitle": "Быстро | Качественно | Дёшево",
 		"backgroundImage": "/images/hero-image.jpg"
 	},
 	"advantages": [
@@ -44,12 +44,6 @@
 			"icon": "shield-check",
 			"text": "Гарантия от 1 до 6 месяцев. Есть возможность возврата",
 			"accent": true
-		},
-		{
-			"id": 1,
-			"icon": "search",
-			"text": "Бесплатная диагностика в любой день без выходных",
-			"accent": false
 		},
 		{
 			"id": 2,
@@ -157,7 +151,7 @@
 			}
 		],
 		"address": {
-			"photo": "/images/zdanie.jpg",
+			"photo": "/images/address-image.jpg",
 			"name": "г. Ташкент, Яккасарайский р-н, улица Аския, 42",
 			"coordinates": ["41.285536", "69.250658"]
 		},
@@ -179,5 +173,19 @@
 				"link": "sms:+998909270731"
 			}
 		]
-	}
+	},
+	"brands": [
+		{
+			"image": "/images/media/samsung.png",
+			"name": "Samsung"
+		},
+		{
+			"image": "/images/media/tefal.png",
+			"name": "Tefal"
+		},
+		{
+			"image": "/images/media/lg.png",
+			"name": "LG"
+		}
+	]
 }

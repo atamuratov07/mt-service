@@ -20,7 +20,7 @@ export function Hero() {
 			)}
 			<div className='relative z-[1] container flex flex-col'>
 				<div className='flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-start'>
-					<h1 className='text-4xl sm:text-5xl md:text-6xl text-ternary font-condensed font-extrabold max-w-[700px]'>
+					<h1 className='text-4xl sm:text-5xl md:text-6xl text-ternary font-black max-w-[700px]'>
 						{heroData.title}
 					</h1>
 					<h2 className='inline-block mt-2 text-base text-nowrap sm:text-xl md:text-2xl px-2 bg-gray-800 text-ternary'>

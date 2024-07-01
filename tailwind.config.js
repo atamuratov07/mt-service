@@ -71,5 +71,12 @@ export default {
 				{ values: theme('textShadow') }
 			)
 		}),
+		plugin(({ matchUtilities, theme }) => {
+			matchUtilities({
+				'animate-duration': value => ({
+					animationDuration: value,
+				}),
+			})
+		}),
 	],
 }

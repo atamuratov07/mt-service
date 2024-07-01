@@ -1,3 +1,4 @@
+import { Brands } from './brands/brands'
 import { Contacts } from './contacts'
 import { Header } from './header'
 import { Hero } from './hero'
@@ -12,6 +13,7 @@ export function AppLayout() {
 				<Hero />
 				<Services />
 				<Prices />
+				<Brands />
 				<Contacts />
 			</main>
 			<div id='modals' className=''></div>

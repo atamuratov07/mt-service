@@ -3,11 +3,11 @@ import { useMountTransition } from '../../hooks/useMountTransition'
 import { cn, lockDocumentScroll } from '../../lib/utils'
 
 export function Modal({ className, open = false, onClose, children }) {
-	const showModal = useMountTransition(open, 200)
+	const { mount, show, hide } = useMountTransition(open, 200)
 
 	lockDocumentScroll(open)
 
-	if (!showModal && !open) return null
+	if (!mount) return null
 
 	const modal = (
 		<div
@@ -15,8 +15,8 @@ export function Modal({ className, open = false, onClose, children }) {
 			className={cn(
 				'fixed inset-0 z-[1000] w-screen overflow-y-auto backdrop-blur-0 bg-black/0',
 				'transition-[backdrop-filter,background-color] duration-300 ease-out',
-				{ 'bg-black/75 backdrop-blur-[2px]': open && showModal },
-				{ 'duration-200 ease-in': !open && showModal }
+				{ 'bg-black/75 backdrop-blur-[2px]': show },
+				{ 'duration-200 ease-in': hide }
 			)}
 		>
 			<div className='flex justify-center items-center min-h-full p-5 pt-10'>

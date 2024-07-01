@@ -24,6 +24,11 @@
 		-webkit-box-orient: horizontal;
 		-webkit-line-clamp: 2;
 	}
+	.animate-marquee {
+		animation-name: marquee;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
 }
 
 @layer utilities {
@@ -38,6 +43,13 @@
 			#136dc2 70% 77%,
 			#075dac 77%
 		);
+	}
+
+	.animation-paused {
+		animation-play-state: paused;
+	}
+	.animation-reverse {
+		animation-direction: reverse;
 	}
 }
 
@@ -78,28 +90,32 @@
 
 	@font-face {
 		font-family: 'Roboto';
-		src: url('/fonts/Roboto-Regular.ttf');
+		src: url('/fonts/Roboto-Regular.woff') format('woff'),
+			url('/fonts/Roboto-Regular.woff2') format('woff2');
 		font-weight: 400;
 		font-display: swap;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: 'Roboto';
-		src: url('/fonts/Roboto-Medium.ttf');
+		src: url('/fonts/Roboto-Medium.woff') format('woff'),
+			url('/fonts/Roboto-Medium.woff2') format('woff2');
 		font-weight: 500;
 		font-display: swap;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: 'Roboto';
-		src: url('/fonts/Roboto-Bold.ttf');
+		src: url('/fonts/Roboto-Bold.woff') format('woff'),
+			url('/fonts/Roboto-Bold.woff2') format('woff2');
 		font-weight: 700;
 		font-display: swap;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: 'Roboto';
-		src: url('/fonts/Roboto-Black.ttf');
+		src: url('/fonts/Roboto-Black.woff') format('woff'),
+			url('/fonts/Roboto-Black.woff2') format('woff2');
 		font-weight: 900;
 		font-display: swap;
 		font-style: normal;
@@ -107,44 +123,48 @@
 
 	@font-face {
 		font-family: 'Roboto Condensed';
-		src: url('/fonts/RobotoCondensed-Regular.ttf');
+		src: url('/fonts/RobotoCondensed-Regular.woff') format('woff'),
+			url('/fonts/RobotoCondensed-Regular.woff2') format('woff2');
 		font-weight: 400;
 		font-display: swap;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: 'Roboto Condensed';
-		src: url('/fonts/RobotoCondensed-Medium.ttf');
+		src: url('/fonts/RobotoCondensed-Medium.woff') format('woff'),
+			url('/fonts/RobotoCondensed-Medium.woff2') format('woff');
 		font-weight: 500;
 		font-display: swap;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: 'Roboto Condensed';
-		src: url('/fonts/RobotoCondensed-SemiBold.ttf');
+		src: url('/fonts/RobotoCondensed-Semibold.woff2') format('woff2');
 		font-weight: 600;
 		font-display: swap;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: 'Roboto Condensed';
-		src: url('/fonts/RobotoCondensed-Bold.ttf');
+		src: url('/fonts/RobotoCondensed-Bold.woff') format('woff'),
+			url('/fonts/RobotoCondensed-Bold.woff2') format('woff2');
 		font-weight: 700;
 		font-display: swap;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: 'Roboto Condensed';
-		src: url('/fonts/RobotoCondensed-ExtraBold.ttf');
+		src: url('/fonts/RobotoCondensed-Extrabold.woff2') format('woff2');
 		font-weight: 800;
 		font-display: swap;
 		font-style: normal;
 	}
-	@font-face {
-		font-family: 'Roboto Condensed';
-		src: url('/fonts/RobotoCondensed-Black.ttf');
-		font-weight: 900;
-		font-display: swap;
-		font-style: normal;
+	@keyframes marquee {
+		from {
+			translate: 0%;
+		}
+		to {
+			translate: -100%;
+		}
 	}
 }

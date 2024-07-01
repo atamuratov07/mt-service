@@ -106,11 +106,11 @@ export function Contacts() {
 				<h3 className='text-center md:text-start text-3xl md:text-4xl font-condensed font-bold'>
 					Контакты
 				</h3>
-				<div className='p-4 md:p-8 border border-gray-400 flex flex-col md:flex-row gap-4 sm:gap-9 overflow-hidden'>
+				<div className='p-4 md:p-8 border border-gray-400 flex flex-col lg:flex-row gap-4 sm:gap-9 overflow-hidden'>
 					<img
 						src={baseDir + contactsData.address.photo}
 						alt='Address Image'
-						className='md:max-w-[40%] object-cover'
+						className='lg:max-w-[50%] object-cover'
 					/>
 					<div className='space-y-5'>
 						<h4 className='text-xl sm:text-2xl lg:text-4xl text-center sm:text-start font-condensed font-bold'>

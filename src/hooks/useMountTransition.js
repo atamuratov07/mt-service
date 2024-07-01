@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react'
 
 export const useMountTransition = (isMounted, unmountDelay) => {
 	const [showComponent, setShowComponent] = useState(false)
+	const mount = isMounted || showComponent
+	const show = isMounted && showComponent
+	const hide = !isMounted && showComponent
 
 	useEffect(() => {
 		let timeoutId
@@ -15,5 +18,5 @@ export const useMountTransition = (isMounted, unmountDelay) => {
 		return () => clearTimeout(timeoutId)
 	}, [unmountDelay, isMounted, showComponent])
 
-	return showComponent
+	return { mount, show, hide }
 }

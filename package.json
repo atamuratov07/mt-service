@@ -3,7 +3,7 @@
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
-	"homepage": "https://atamuratov07.github.io/mt-service/",
+	"homepage": "https://mt-service.uz/",
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
