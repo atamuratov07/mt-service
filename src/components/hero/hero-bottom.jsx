@@ -1,8 +1,7 @@
+import { useAppContext } from '../../context/app-context'
 import { Icon } from '../ui/icon'
 
 const RenderContacts = ({ className }) => {
-	const { baseDir } = useAppContext()
-
 	return (
 		<ul className={className}>
 			<li className='flex flex-nowrap justify-center lg:justify-start gap-x-2'>
@@ -30,6 +29,8 @@ const RenderContacts = ({ className }) => {
 }
 
 export function HeroBottom() {
+	const { baseDir } = useAppContext()
+
 	return (
 		<div className='bg-white py-8'>
 			<div className='container text-xl font-black uppercase text-primary-alt text-center lg:text-start space-y-10 lg:space-y-0'>
