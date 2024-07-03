@@ -1,5 +1,5 @@
 {
-	"baseDir": "",
+	"baseDir": "/mt-service",
 	"icons": {
 		"path": "/icons/sprite.svg",
 		"starterId": "icons-sprite-"
