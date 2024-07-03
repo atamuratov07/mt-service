@@ -8,8 +8,13 @@ const RenderLogo = ({ logoPath }) => {
 	if (!logoPath) return null
 
 	return (
-		<a className='inline-block w-16 md:w-24'>
-			<img src={logoPath} alt='Logo MT Service' className='max-w-full' />
+		<a href='/' className='inline-block'>
+			<img
+				src={logoPath}
+				width={200}
+				alt='Logo MT Service'
+				className='max-w-full'
+			/>
 		</a>
 	)
 }

@@ -14,10 +14,10 @@ const defaultClasses = {
 	placeholder: 'placeholder:text-gray-500',
 	focused: '!border-accent ring-1 ring-accent/95',
 	select:
-		'absolute z-10 top-full w-full bg-ternary rounded-md opacity-0 transition-all overflow-hidden',
+		'absolute z-10 top-full w-full bg-ternary shadow-md rounded-md opacity-0 transition-all overflow-hidden',
 	selectActive: 'translate-y-3 opacity-100',
 	options: '',
-	empty: '',
+	empty: 'text-2xl font-bold text-center py-8 text-gray-700',
 	option:
 		'w-full text-start transition-colors p-2 rounded-[3px] hover:bg-accent/25 hover:bg-sky-100',
 	highlighted: 'bg-accent/25 bg-sky-100',

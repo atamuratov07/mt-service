@@ -1,34 +1,56 @@
+import { useEffect, useRef, useState } from 'react'
 import { useAppContext } from '../../context/app-context'
-import { Advantages } from '../advantages'
+import { cn } from '../../lib/utils'
+import { HeroBottom } from './hero-bottom'
+import { HeroTop } from './hero-top'
 
-export function Hero() {
-	const { hero: heroData, baseDir } = useAppContext()
+export function Hero({ duration = 3000 }) {
+	const { hero: heroData } = useAppContext()
+	const [isActive, setIsActive] = useState(false)
+	const [stopped, setStopped] = useState(false)
+	const ref = useRef(null)
+
+	useEffect(() => {
+		if (stopped) return
+
+		let timeout = setTimeout(function timeoutCb() {
+			setIsActive(isActive => !isActive)
+			timeout = setTimeout(timeoutCb, duration)
+		}, duration)
+
+		return () => {
+			clearTimeout(timeout)
+		}
+	}, [duration, stopped])
 
 	if (!heroData) return null
 
+	const className =
+		'absolute opacity-0 invisible pointer-events-none scale-95 md:static md:opacity-100 md:visible md:pointer-events-auto md:scale-100'
+
 	return (
-		<section
-			id='main'
-			className='relative flex justify-between h-[80vmin] min-h-[700px] md:min-h-[800px] bg-slate-800'
+		<div
+			ref={ref}
+			className='flex lg:flex-col'
+			onMouseEnter={() => setStopped(true)}
+			onMouseLeave={() => setStopped(false)}
+			onTouchStart={() => setStopped(true)}
+			onTouchEnd={() => setStopped(false)}
 		>
-			{heroData.backgroundImage && (
-				<img
-					alt='Hero background image'
-					src={baseDir + heroData.backgroundImage}
-					className='absolute inset-0 opacity-50 block w-full h-full object-cover'
-				/>
-			)}
-			<div className='relative z-[1] container flex flex-col'>
-				<div className='flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-start'>
-					<h1 className='text-4xl sm:text-5xl md:text-6xl text-ternary font-black max-w-[700px]'>
-						{heroData.title}
-					</h1>
-					<h2 className='inline-block mt-2 text-base text-nowrap sm:text-xl md:text-2xl px-2 bg-gray-800 text-ternary'>
-						{heroData.subTitle}
-					</h2>
-				</div>
-				<Advantages className='pb-4' />
+			<div
+				className={cn('basis-full md:basis-1/2 transition-all', {
+					[className]: isActive,
+				})}
+			>
+				<HeroTop />
 			</div>
-		</section>
+			<div
+				className={cn('basis-full md:basis-1/2 transition-all', {
+					[className]: !isActive,
+				})}
+			>
+				<HeroBottom />
+			</div>
+		</div>
 	)
 }

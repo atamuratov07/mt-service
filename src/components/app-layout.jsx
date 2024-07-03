@@ -3,7 +3,6 @@ import { Contacts } from './contacts'
 import { Header } from './header'
 import { Hero } from './hero'
 import { Prices } from './prices'
-import { Services } from './services'
 
 export function AppLayout() {
 	return (
@@ -11,7 +10,7 @@ export function AppLayout() {
 			<Header />
 			<main className='bg-bg-gray'>
 				<Hero />
-				<Services />
+				{/* <Services /> */}
 				<Prices />
 				<Brands />
 				<Contacts />

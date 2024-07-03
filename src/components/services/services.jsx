@@ -5,7 +5,7 @@ const getServicesData = productCategoriesData =>
 	productCategoriesData.map(item => ({
 		title: item.serviceTitle,
 		id: item.id,
-		kinds: item.kinds,
+		kinds: item.kinds.map(kind => kind.name),
 	}))
 
 export function Services() {
@@ -44,12 +44,6 @@ export function Services() {
 										)
 									})}
 								</ul>
-								<a
-									href={`#${id}`}
-									className='inline-block font-medium w-full sm:w-auto text-center px-1 py-2 sm:py-2 sm:px-5 rounded-md border-2 border-accent border-solid text-accent hover:bg-accent hover:text-ternary transition-colors'
-								>
-									Посмотреть цены
-								</a>
 							</Accordion.GroupContent>
 						</Accordion.Group>
 					))}

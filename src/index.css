@@ -66,16 +66,19 @@
 	:root {
 		--font-primary: 'Roboto';
 		--font-secondary: 'Roboto Condensed';
-		--color-primary: #000;
-		--color-secondary: #7a8098;
-		--color-secondary-alt: #9fa2ae;
-		--color-ternary: #fff;
-		--color-hover: #43495c;
-		--color-active: #242838;
-		--color-accent: #2375c3;
-		--color-bg-primary: #fff;
-		--color-bg-secondary: #3b3f4f;
-		--color-bg-ternary: #f3f3f3;
+		--font-ternary: 'Kinetika';
+		--color-dark: #000;
+		--color-gray: #444;
+		--color-purple: #7a8098;
+		--color-purple-light: #9fa2ae;
+		--color-white: #fff;
+		--color-purple-dark: #43495c;
+		--color-blue-dark: #242838;
+		--color-blue: #2375c3;
+		--color-orange: #f47c1c;
+		--color-bg-white: #fff;
+		--color-bg-purple-dark: #3b3f4f;
+		--color-bg-gray-light: #f3f3f3;
 	}
 
 	html {
@@ -159,6 +162,22 @@
 		font-display: swap;
 		font-style: normal;
 	}
+	@font-face {
+		font-family: 'Roboto Condensed';
+		src: url('/fonts/RobotoCondensed-Extrabold.woff2') format('woff2');
+		font-weight: 800;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Kinetika';
+		src: url('/fonts/Kinetika-Heavy.woff') format('woff'),
+			url('/fonts/Kinetika-Heavy.woff2') format('woff2');
+		font-weight: 900;
+		font-display: swap;
+		font-style: normal;
+	}
+
 	@keyframes marquee {
 		from {
 			translate: 0%;

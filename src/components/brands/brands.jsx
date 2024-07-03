@@ -18,7 +18,7 @@ export function Brands() {
 	})
 
 	return (
-		<section id='brands' className='py-8 md:pt-16'>
+		<section id='brands' className='pb-8 pt-40 md:pt-16'>
 			<Marquee className='h-12 md:h-20' items={brandElements} speed={120} />
 			<Marquee
 				className='h-12 md:h-20'

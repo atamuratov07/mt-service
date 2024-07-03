@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { transliteration } from '../../../../lib/utils'
 import { useHighlight } from './useHighlight'
 import { useOptions } from './useOptions'
 import { groupOptions } from './utils'
@@ -17,7 +18,11 @@ export function useSelect({
 
 	const [search, setSearch] = useState('')
 
-	const [options, fetching] = useOptions(allOptions, debounce, search)
+	const [options, fetching] = useOptions(
+		allOptions,
+		debounce,
+		transliteration(search)
+	)
 
 	const [option, setOption] = useState(null)
 	const [value, setValue] = useState(defaultValue)

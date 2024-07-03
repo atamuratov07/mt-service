@@ -31,67 +31,85 @@ function RenderMedia({ data, className }) {
 
 function RenderContactsInfo({ data }) {
 	return (
-		<ul className='space-y-2 sm:space-y-5 text-sm sm:text-base lg:text-lg font-medium'>
-			<li className='flex gap-3 justify-start items-center'>
+		<div className='space-y-5'>
+			<div className='flex items-center gap-x-3 md:gap-x-4 justify-center'>
 				<Icon
-					name='clock'
-					className='aspect-square min-w-5 max-w-4 sm:min-w-5 lg:w-7 fill-ternary'
+					name='contacts'
+					className='aspect-square w-6 md:w-8 fill-ternary'
 				/>
-				<table className=''>
-					<tbody>
-						{data.schedule.map(({ days, time }, i) => {
+				<h4 className='text-xl sm:text-3xl sm:text-start font-condensed font-bold'>
+					Контактная информация
+				</h4>
+			</div>
+			<ul className='space-y-2 sm:space-y-5 text-sm sm:text-base lg:text-lg font-medium'>
+				<li className='flex gap-3 justify-start items-center'>
+					<Icon
+						name='phone'
+						className='aspect-square min-w-4 max-w-4 sm:min-w-5 lg:w-7 fill-ternary'
+					/>
+					<div className='flex flex-col'>
+						{data.tels.map(({ link, value }, i) => {
 							return (
-								<tr key={i}>
-									<td className='pr-2'>{days}</td>
-									<td className='pl-2'>{time}</td>
-								</tr>
+								<a
+									key={i}
+									href={`tel:${link}`}
+									className='underline hover:text-accent transition-colors'
+								>
+									{value}
+								</a>
 							)
 						})}
-					</tbody>
-				</table>
-			</li>
-			<li className='flex gap-3 justify-start items-center'>
-				<Icon
-					name='location'
-					className='aspect-square min-w-4 max-w-4 sm:min-w-5 lg:w-7 fill-ternary'
-				/>
-				{data.address.name}
-			</li>
-			<li className='flex gap-3 justify-start items-center'>
-				<Icon
-					name='phone'
-					className='aspect-square min-w-4 max-w-4 sm:min-w-5 lg:w-7 fill-ternary'
-				/>
-				<div className='flex flex-col'>
-					{data.tels.map(({ link, value }, i) => {
-						return (
-							<a
-								key={i}
-								href={`tel:${link}`}
-								className='underline hover:text-accent transition-colors'
-							>
-								{value}
-							</a>
-						)
-					})}
-				</div>
-			</li>
-			<li className='flex gap-3 justify-start items-center'>
-				<Icon
-					name='email'
-					className='aspect-square min-w-4 max-w-4 sm:min-w-5 lg:w-7 fill-ternary'
-				/>
-				<a
-					href={`mailto:${data.email}`}
-					className='underline hover:text-accent transition-colors'
-				>
-					{data.email}
-				</a>
-			</li>
-		</ul>
+					</div>
+				</li>
+				<li className='flex items-center gap-3 justify-start'>
+					<Icon
+						name='email'
+						className='aspect-square min-w-4 max-w-4 sm:min-w-5 lg:w-7 fill-ternary'
+					/>
+					<a
+						href={`mailto:${data.email}`}
+						className='underline hover:text-accent transition-colors'
+					>
+						{data.email}
+					</a>
+				</li>
+			</ul>
+		</div>
 	)
 }
 
+function RenderSchedule({ data }) {
+	return (
+		<div className='space-y-5'>
+			<div className='flex gap-x-2 md:gap-x-4 justify-center items-center'>
+				<Icon
+					name='clock'
+					className='aspect-square w-6 md:w-10 fill-ternary'
+				/>
+				<h4 className='text-xl sm:text-3xl sm:text-start font-condensed font-bold'>
+					График работы
+				</h4>
+			</div>
+			<table className='w-full md:text-lg'>
+				<tbody>
+					{data.map(({ days, shortDays, time }, i) => {
+						return (
+							<tr key={i}>
+								<td className='pr-2 hidden sm:block'>{days}</td>
+								<td className='pr-2 font-semibold uppercase sm:hidden'>
+									{shortDays}
+								</td>
+								<td className='pl-2 text-right sm:text-left font-semibold'>
+									{time}
+								</td>
+							</tr>
+						)
+					})}
+				</tbody>
+			</table>
+		</div>
+	)
+}
 export function Contacts() {
 	const { contacts: contactsData, baseDir } = useAppContext()
 
@@ -113,14 +131,23 @@ export function Contacts() {
 						className='lg:max-w-[50%] object-cover'
 					/>
 					<div className='space-y-5'>
-						<h4 className='text-xl sm:text-2xl lg:text-4xl text-center sm:text-start font-condensed font-bold'>
-							Контактная информация
-						</h4>
+						<RenderSchedule data={contactsData.schedule} />
 						<RenderContactsInfo data={contactsData} />
 						<RenderMedia data={contactsData.media} />
 					</div>
 				</div>
-				<YandexMap address={contactsData.address} />
+				<div className='space-y-2'>
+					<div className='flex flex-col sm:flex-row gap-3 items-center text-center justify-center'>
+						<Icon
+							name='location'
+							className='aspect-square w-6 shrink-0 fill-ternary'
+						/>
+						<h3 className='text-lg md:text-2xl'>
+							{contactsData.address.name}
+						</h3>
+					</div>
+					<YandexMap address={contactsData.address} />
+				</div>
 			</div>
 		</section>
 	)
