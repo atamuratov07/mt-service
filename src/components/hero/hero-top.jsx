@@ -15,7 +15,7 @@ export function HeroTop() {
 				/>
 				<div className='flex flex-col-reverse gap-x-12 gap-y-16 lg:items-center justify-between lg:flex-row'>
 					<img
-						src='/images/hero/coffee-machines.png'
+						src={baseDir + '/images/hero/coffee-machines.png'}
 						alt='Coffee Machine Image'
 						width='350'
 						className='w-full md:max-w-[500px] 2xl:max-w-[600px] drop-shadow-[0_0_60px_#fff]'
