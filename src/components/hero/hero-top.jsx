@@ -8,14 +8,14 @@ export function HeroTop() {
 		<div className='bg-zinc-800 py-8 h-full  lg:h-auto'>
 			<div className='container flex flex-col gap-y-8 justify-between h-full font-black uppercase text-xl text-white text-center lg:text-start'>
 				<img
-					src={baseDir + '/images/logo-white.png'}
+					src={baseDir + '/images/logo-white.webp'}
 					alt='Logo MT Service'
 					width='300'
 					className='w-full max-w-[300px] lg:max-w-[400px] mx-auto'
 				/>
 				<div className='flex flex-col-reverse gap-x-12 gap-y-16 lg:items-center justify-between lg:flex-row'>
 					<img
-						src={baseDir + '/images/hero/coffee-machines.png'}
+						src={baseDir + '/images/hero/coffee-machines.webp'}
 						alt='Coffee Machine Image'
 						width='350'
 						className='w-full md:max-w-[500px] 2xl:max-w-[600px] drop-shadow-[0_0_60px_#fff]'

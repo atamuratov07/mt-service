@@ -80,7 +80,7 @@ export function HeroBottom() {
 							</li>
 						</ul>
 						<img
-							src={baseDir + '/images/hero/appliances.png'}
+							src={baseDir + '/images/hero/appliances.webp'}
 							alt='Appliances Image'
 							className='block w-full lg:max-w-[600px] lg:translate-y-[-10%]'
 						/>
