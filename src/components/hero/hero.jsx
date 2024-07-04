@@ -31,7 +31,8 @@ export function Hero({ duration = 3000 }) {
 	return (
 		<div
 			ref={ref}
-			className='flex lg:flex-col'
+			id='main'
+			className='flex lg:flex-col h-screen md:h-auto'
 			onMouseEnter={() => setStopped(true)}
 			onMouseLeave={() => setStopped(false)}
 			onTouchStart={() => setStopped(true)}

@@ -1,10 +1,11 @@
 import { useAppContext } from '../../context/app-context'
+import { cn } from '../../lib/utils'
 import { Icon } from '../ui/icon'
 
 const RenderContacts = ({ className }) => {
 	return (
-		<ul className={className}>
-			<li className='flex flex-nowrap justify-center lg:justify-start gap-x-2'>
+		<ul className={cn('flex flex-wrap gap-x-10 justify-center', className)}>
+			<li className='flex flex-nowrap gap-x-2'>
 				<Icon
 					name='phone'
 					className='text-accent-secondary p-1 w-8 rounded-full aspect-square overflow-visible'
@@ -14,7 +15,7 @@ const RenderContacts = ({ className }) => {
 					+998 90 927-07-31
 				</a>
 			</li>
-			<li className='flex flex-nowrap justify-center lg:justify-start gap-x-2'>
+			<li className='flex flex-nowrap gap-x-2'>
 				<Icon
 					name='phone'
 					className='text-accent-secondary p-1 w-8 rounded-full aspect-square overflow-visible'
@@ -33,9 +34,9 @@ export function HeroBottom() {
 
 	return (
 		<div className='bg-white py-8'>
-			<div className='container text-xl font-black uppercase text-primary-alt text-center lg:text-start space-y-10 lg:space-y-0'>
-				<div className='lg:flex justify-between space-y-10 lg:space-y-0'>
-					<div className='space-y-6'>
+			<div className='container text-xl font-black uppercase text-primary-alt text-center lg:text-start space-y-10'>
+				<div className='lg:flex justify-between md:space-y-10 lg:space-y-0'>
+					<div className='space-y-4'>
 						<h1 className='font-heavy text-3xl lg:text-4xl'>
 							<span className='text-accent-secondary text-7xl lg:text-8xl'>
 								Ремонт
@@ -43,7 +44,7 @@ export function HeroBottom() {
 							<br />
 							Бытовой техники
 						</h1>
-						<ul className='flex flex-col items-center lg:items-start'>
+						<ul className='flex flex-col items-center lg:items-start text-nowrap'>
 							<li className='relative w-fit before:content-[""] before:absolute before:top-1/2 before:-translate-y-1/2 before:-left-3 before:block before:bg-accent-secondary before:rounded-full before:w-1 before:aspect-square'>
 								Роботы-пылесосы
 							</li>
@@ -65,8 +66,8 @@ export function HeroBottom() {
 						</ul>
 						<RenderContacts className='hidden lg:block' />
 					</div>
-					<div className='space-y-6 lg:space-y-0'>
-						<ul className='relative z-[5] lg:text-right'>
+					<div className='md:space-y-6 lg:space-y-0'>
+						<ul className='hidden md:block relative z-[5] lg:text-right'>
 							<li>Режим Работы</li>
 							<li>
 								Пн - Пт:{' '}

@@ -6,7 +6,7 @@ export function HeroTop() {
 
 	return (
 		<div className='bg-zinc-800 py-8 h-full  lg:h-auto'>
-			<div className='container flex flex-col gap-y-8 justify-between h-full font-black uppercase text-xl text-white text-center lg:text-start'>
+			<div className='container flex flex-col justify-between h-full font-black uppercase text-xl text-white text-center lg:text-start'>
 				<img
 					src={baseDir + '/images/logo-white.webp'}
 					alt='Logo MT Service'
@@ -40,7 +40,7 @@ export function HeroTop() {
 						>
 							<Icon
 								name='telegram'
-								className='text-white bg-blue-500 p-1 w-9 rounded-full aspect-square'
+								className='text-white bg-blue-500 p-1 w-8 rounded-full aspect-square overflow-visible'
 							/>
 						</a>
 					</li>
@@ -51,7 +51,7 @@ export function HeroTop() {
 						>
 							<Icon
 								name='phone'
-								className='text-accent-secondary bg-white p-1 w-9 rounded-full aspect-square'
+								className='text-accent-secondary bg-white p-1 w-8 rounded-full aspect-square overflow-visible'
 							/>
 							+998 99 822-63-62
 						</a>
