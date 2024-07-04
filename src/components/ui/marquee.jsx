@@ -23,7 +23,7 @@ const RenderMarquee = forwardRef(
 					...items.map((inner, index) => (
 						<li
 							key={index + i}
-							className='flex items-center justify-center h-full px-5 md:px-10'
+							className='flex items-center justify-center h-full px-5 md:px-10 group/marquee-item'
 						>
 							{inner()}
 						</li>
@@ -43,7 +43,7 @@ const RenderMarquee = forwardRef(
 			className: cn(className, 'animate-duration animate-marquee', {
 				'animation-reverse': direction === 'right',
 				'animation-paused': isClicked,
-				'group-hover:animation-paused': pauseOnHover,
+				'group-hover/marquee:animation-paused': pauseOnHover,
 			}),
 		}
 
@@ -115,7 +115,7 @@ export function Marquee({
 			className={cn(
 				'w-full',
 				className,
-				'overflow-hidden flex flex-row group'
+				'overflow-hidden flex flex-row group/marquee'
 			)}
 		>
 			<RenderMarquee

@@ -12,7 +12,7 @@ export function Brands() {
 				src={baseDir + brandData.image}
 				alt={brandData.name}
 				title={brandData.name}
-				className='block w-full h-8 md:h-10 grayscale hover:grayscale-0 select-none touch-none pointer-events-none active:grayscale-0 transition-[filter]'
+				className='block w-full h-8 md:h-10 grayscale group-hover/marquee-item:grayscale-0 group-active/marquee-item:group-hover:grayscale-0 select-none touch-none pointer-events-none transition-[filter]'
 			/>
 		)
 	})
