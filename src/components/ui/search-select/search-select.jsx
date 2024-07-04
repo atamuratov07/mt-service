@@ -24,7 +24,7 @@ const defaultClasses = {
 	selected: '!bg-accent text-ternary',
 	item: '',
 	group: 'min-h-max',
-	groupHeader: 'text-gray-500 font-medium',
+	groupHeader: 'text-accent font-medium',
 	groupList: '',
 }
 
