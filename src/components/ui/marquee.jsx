@@ -14,20 +14,25 @@ const RenderMarquee = forwardRef(
 		ref
 	) => {
 		const itemsCount = items.length
-
+		const [activeItem, setActiveItem] = useState(-1)
 		const multiplyItems = number => {
 			const multiplied = []
 
 			for (let i = 0; i < number; i += itemsCount) {
 				multiplied.push(
-					...items.map((inner, index) => (
-						<li
-							key={index + i}
-							className='flex items-center justify-center h-full px-5 md:px-10 group/marquee-item'
-						>
-							{inner()}
-						</li>
-					))
+					...items.map((inner, index) => {
+						const order = index + i
+						return (
+							<li
+								key={order}
+								onTouchStart={() => setActiveItem(order)}
+								onTouchEnd={() => setActiveItem(-1)}
+								className='flex items-center justify-center h-full px-5 md:px-10 group/marquee-item'
+							>
+								{inner({ isActive: activeItem === order })}
+							</li>
+						)
+					})
 				)
 			}
 
