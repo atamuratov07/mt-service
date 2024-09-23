@@ -2,7 +2,7 @@ import { useAppContext } from '../../context/app-context'
 import { Icon } from '../ui/icon'
 
 export function HeroTop() {
-	const { baseDir } = useAppContext()
+	const { baseDir, contacts } = useAppContext()
 
 	return (
 		<div className='bg-zinc-800 py-8 h-full  lg:h-auto'>
@@ -53,7 +53,7 @@ export function HeroTop() {
 								name='phone'
 								className='text-accent-secondary bg-white p-1 w-8 rounded-full aspect-square overflow-visible'
 							/>
-							+998 99 822-63-62
+							+000 11 333-44-55
 						</a>
 					</li>
 				</ul>

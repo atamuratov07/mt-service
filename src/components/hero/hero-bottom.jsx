@@ -12,7 +12,7 @@ const RenderContacts = ({ className }) => {
 				/>
 
 				<a href='tel:+998909270731' className='text-2xl'>
-					+998 90 927-07-31
+					+000 99 888-77-66
 				</a>
 			</li>
 			<li className='flex flex-nowrap gap-x-2'>
@@ -22,7 +22,7 @@ const RenderContacts = ({ className }) => {
 				/>
 
 				<a href='tel:+998998226362' className='text-2xl'>
-					+998 99 822-63-62
+					+000 22 333-44-55
 				</a>
 			</li>
 		</ul>
